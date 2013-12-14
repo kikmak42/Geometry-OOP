@@ -4,17 +4,8 @@
  */
 package geometryoop.control;
 
-import geometryoop.model.GeometryShape;
 import geometryoop.model.ShapeType;
-import geometryoop.model.drawables.DrawableCircle;
-import geometryoop.model.drawables.DrawableHexagon;
-import geometryoop.model.drawables.DrawablePentagon;
-import geometryoop.model.drawables.DrawableSquare;
-import geometryoop.model.drawables.DrawableTriangle;
 import geometryoop.view.Main;
-import java.awt.Graphics2D;
-import java.util.HashMap;
-import javax.swing.JPanel;
 
 /**
  *

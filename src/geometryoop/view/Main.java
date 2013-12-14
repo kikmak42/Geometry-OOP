@@ -159,7 +159,7 @@ public class Main extends javax.swing.JFrame {
 
     @Override
     public void paint(Graphics g) {
-        jSplitPane1.setDividerLocation(jPanelMain.getWidth()-225);
+        jSplitPane1.setDividerLocation(jPanelMain.getWidth()-240);
         super.paint(g); //To change body of generated methods, choose Tools | Templates.
     }
     
