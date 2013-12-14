@@ -27,7 +27,6 @@ public class DrawablePentagon extends GeometryShape {
         p.setOffset((int) value, (int) value);
 
         gd.setColor(Color.BLUE);
-        gd.scale(value * 0.1, value * 0.1);
         gd.fillPolygon(new Polygon(xpoints, ypoints, sides));
     }
 }
