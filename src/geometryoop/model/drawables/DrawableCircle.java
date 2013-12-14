@@ -4,7 +4,6 @@
  */
 package geometryoop.model.drawables;
 
-import geometryoop.util.CircleDraw;
 import geometryoop.model.GeometryShape;
 import java.awt.Color;
 import java.awt.Graphics2D;
