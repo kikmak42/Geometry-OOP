@@ -5,7 +5,10 @@
 package geometryoop.model.drawables;
 
 import geometryoop.model.GeometryShape;
+import geometryoop.util.PolygonPoints;
+import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Polygon;
 
 /**
  *
@@ -15,6 +18,16 @@ public class DrawableSquare extends GeometryShape{
     
     @Override
     public void draw(Graphics2D gd, double value){
-        System.out.println("Square");
+         int sides = 4;
+        int[] xpoints = new int[sides];
+        int[] ypoints = new int[sides];
+        
+        PolygonPoints p = new PolygonPoints(xpoints,ypoints,sides);
+        p.generatePoints(value);
+        p.setOffset((int)value,(int)value);
+        
+        gd.setColor(Color.BLUE);
+        gd.scale(value*0.1, value*0.1);
+        gd.fillPolygon(new Polygon(xpoints, ypoints, sides));
     }   
 }

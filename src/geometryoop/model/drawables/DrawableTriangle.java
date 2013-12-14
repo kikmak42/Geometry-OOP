@@ -5,6 +5,7 @@
 package geometryoop.model.drawables;
 
 import geometryoop.model.GeometryShape;
+import geometryoop.util.PolygonPoints;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Polygon;
@@ -17,17 +18,16 @@ public class DrawableTriangle extends GeometryShape{
     
     @Override
     public void draw(Graphics2D gd, double value){
-        int[] xpoints = new int[3];
-        int[] ypoints = new int[3];
-        double factor=(value/200);
-        xpoints[0]=(int)(50*factor);
-        xpoints[2]=(int)(150*factor);
-        ypoints[0]=(int)(250*factor);
-        ypoints[1]=(int)(250*factor);
-        ypoints[2]=(int)(77*factor);
-        xpoints[1]=(int)(250*factor);
+        int sides = 3;
+        int[] xpoints = new int[sides];
+        int[] ypoints = new int[sides];
+        
+        PolygonPoints p = new PolygonPoints(xpoints,ypoints,sides);
+        p.generatePoints(value);
+        p.setOffset((int)value,(int)value);
         
         gd.setColor(Color.BLUE);
-        gd.fillPolygon(new Polygon(xpoints, ypoints, 3));
+        gd.scale(value*0.1, value*0.1);
+        gd.fillPolygon(new Polygon(xpoints, ypoints, sides));
     }   
 }

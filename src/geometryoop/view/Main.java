@@ -6,6 +6,7 @@ package geometryoop.view;
 
 import geometryoop.control.Controller;
 import geometryoop.model.GeometryShape;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
@@ -63,6 +64,7 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanelMain = new javax.swing.JPanel();
         jSplitPane1 = new javax.swing.JSplitPane();
         inputPanel1 = new geometryoop.view.panels.InputPanel();
         jPanel1 = new javax.swing.JPanel() {
@@ -94,21 +96,36 @@ public class Main extends javax.swing.JFrame {
 
         jSplitPane1.setLeftComponent(jPanel1);
 
+        javax.swing.GroupLayout jPanelMainLayout = new javax.swing.GroupLayout(jPanelMain);
+        jPanelMain.setLayout(jPanelMainLayout);
+        jPanelMainLayout.setHorizontalGroup(
+            jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 737, Short.MAX_VALUE)
+            .addGroup(jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelMainLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 717, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        jPanelMainLayout.setVerticalGroup(
+            jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 392, Short.MAX_VALUE)
+            .addGroup(jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelMainLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jSplitPane1)
+                    .addContainerGap()))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 717, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanelMain, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jSplitPane1)
-                .addContainerGap())
+            .addComponent(jPanelMain, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -131,6 +148,7 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private geometryoop.view.panels.InputPanel inputPanel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanelMain;
     private javax.swing.JSplitPane jSplitPane1;
     // End of variables declaration//GEN-END:variables
     private Controller controller;
@@ -138,4 +156,12 @@ public class Main extends javax.swing.JFrame {
     public JPanel getCanvas() {
         return jPanel1;
     }
+
+    @Override
+    public void paint(Graphics g) {
+        jSplitPane1.setDividerLocation(jPanelMain.getWidth()-225);
+        super.paint(g); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 }
