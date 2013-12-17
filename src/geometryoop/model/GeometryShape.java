@@ -5,13 +5,12 @@
 package geometryoop.model;
 
 import java.awt.Graphics2D;
-import javax.swing.JPanel;
 
 /**
  *
  * @author kaushik
  */
-public class GeometryShape {
+public abstract class GeometryShape {
 
     protected int xOffset;
     protected int yOffset;
@@ -21,11 +20,10 @@ public class GeometryShape {
         yOffset = 0;
     }
 
-    public void draw(Graphics2D gd, double value) {
-    }
+    public abstract void draw(Graphics2D gd, double value);
 
     public void setOffset(int xOffset, int yOffset) {
-        this.xOffset = xOffset+this.xOffset;
-        this.yOffset = yOffset+this.yOffset;     
+        this.xOffset = xOffset + this.xOffset;
+        this.yOffset = yOffset + this.yOffset;
     }
 }
