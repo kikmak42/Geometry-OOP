@@ -21,10 +21,10 @@ public class DrawablePentagon extends GeometryShape {
         int sides = 5;
         int[] xpoints = new int[sides];
         int[] ypoints = new int[sides];
-
+        
         PolygonPoints p = new PolygonPoints(xpoints, ypoints, sides);
         p.generatePoints(value);
-        p.setOffset((int) value, (int) value);
+        p.setOffset(xOffset + (int) value, yOffset + (int) value);
 
         gd.setColor(Color.BLUE);
         gd.fillPolygon(new Polygon(xpoints, ypoints, sides));

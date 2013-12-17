@@ -14,19 +14,19 @@ import java.awt.Polygon;
  *
  * @author kaushik
  */
-public class DrawableTriangle extends GeometryShape{
-    
+public class DrawableTriangle extends GeometryShape {
+
     @Override
-    public void draw(Graphics2D gd, double value){
+    public void draw(Graphics2D gd, double value) {
         int sides = 3;
         int[] xpoints = new int[sides];
         int[] ypoints = new int[sides];
-        
-        PolygonPoints p = new PolygonPoints(xpoints,ypoints,sides);
+
+        PolygonPoints p = new PolygonPoints(xpoints, ypoints, sides);
         p.generatePoints(value);
-        p.setOffset((int)value,(int)value);
-        
+        p.setOffset(xOffset + (int) value, yOffset + (int) value);
+
         gd.setColor(Color.BLUE);
         gd.fillPolygon(new Polygon(xpoints, ypoints, sides));
-    }   
+    }
 }

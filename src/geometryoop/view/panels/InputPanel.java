@@ -102,31 +102,27 @@ public class InputPanel extends javax.swing.JPanel {
             controller.drawShape(buttonPanel.getSelectedShapeType(), Double.parseDouble(jTextField1.getText()));
             //controller.drawShape(null, but);
             /*
-            final DrawableCircle dc = new DrawableCircle();
-            JPanel drawingPanel = new JPanel() {
-                @Override
-                protected void paintComponent(Graphics grphcs) {
-                    super.paintComponent(grphcs);
-                    Graphics2D g2d = (Graphics2D) grphcs;
-                    //g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                    dc.draw(g2d, getWidth(), getHeight());
+             final DrawableCircle dc = new DrawableCircle();
+             JPanel drawingPanel = new JPanel() {
+             @Override
+             protected void paintComponent(Graphics grphcs) {
+             super.paintComponent(grphcs);
+             Graphics2D g2d = (Graphics2D) grphcs;
+             //g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+             dc.draw(g2d, getWidth(), getHeight());
 
-                }
-            };
-            jPanel2.add(drawingPanel);
-            */
+             }
+             };
+             jPanel2.add(drawingPanel);
+             */
             //s.draw(null, WIDTH, WIDTH);
         } catch (ButtonPanel.NoButtonSelectedException ex) {
-            
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void setController(Controller controller) {
         this.controller = controller;
     }
-
-    
-    
     private Controller controller;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;

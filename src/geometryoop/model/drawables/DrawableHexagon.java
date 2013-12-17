@@ -24,7 +24,7 @@ public class DrawableHexagon extends GeometryShape {
 
         PolygonPoints p = new PolygonPoints(xpoints, ypoints, sides);
         p.generatePoints(value);
-        p.setOffset((int) value, (int) value);
+        p.setOffset(xOffset + (int) value, yOffset + (int) value);
 
         gd.setColor(Color.BLUE);
         gd.fillPolygon(new Polygon(xpoints, ypoints, sides));

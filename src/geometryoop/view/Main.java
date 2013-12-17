@@ -5,9 +5,7 @@
 package geometryoop.view;
 
 import geometryoop.control.Controller;
-import geometryoop.model.GeometryShape;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 /**
@@ -15,8 +13,6 @@ import javax.swing.JPanel;
  * @author kaushik
  */
 public class Main extends javax.swing.JFrame {
-    
-
 
     /**
      * Creates new form Main
@@ -46,7 +42,7 @@ public class Main extends javax.swing.JFrame {
         //</editor-fold>
 
 
-        
+
         initComponents();
     }
 
@@ -83,6 +79,17 @@ public class Main extends javax.swing.JFrame {
         jSplitPane1.setDividerLocation(500);
         jSplitPane1.setRightComponent(inputPanel1);
 
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel1MousePressed(evt);
+            }
+        });
+        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel1MouseDragged(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -91,7 +98,7 @@ public class Main extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 368, Short.MAX_VALUE)
+            .addGap(0, 376, Short.MAX_VALUE)
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -109,7 +116,7 @@ public class Main extends javax.swing.JFrame {
         );
         jPanelMainLayout.setVerticalGroup(
             jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 392, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
             .addGroup(jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelMainLayout.createSequentialGroup()
                     .addContainerGap()
@@ -131,6 +138,16 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+        controller.setOffset(evt.getX(),evt.getY());
+        //System.out.println("Mouse Dragged : "+evt.getX()+" "+evt.getY());
+       // controller.getShapeType().getGeometryShape().setOffset(evt.getX(),evt.getY());
+    }//GEN-LAST:event_jPanel1MouseDragged
+
+    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
+        controller.setClicked(evt.getX(), evt.getY());
+        System.out.println("Mouse Pressed at :"+evt.getX()+" "+evt.getY());
+    }//GEN-LAST:event_jPanel1MousePressed
     /**
      * @param args the command line arguments
      */
@@ -138,13 +155,13 @@ public class Main extends javax.swing.JFrame {
      public static void main(String args[]) {
         
 
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Main().setVisible(true);
-            }
-        });
-    }
-*/
+     java.awt.EventQueue.invokeLater(new Runnable() {
+     public void run() {
+     new Main().setVisible(true);
+     }
+     });
+     }
+     */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private geometryoop.view.panels.InputPanel inputPanel1;
     private javax.swing.JPanel jPanel1;
@@ -159,9 +176,7 @@ public class Main extends javax.swing.JFrame {
 
     @Override
     public void paint(Graphics g) {
-        jSplitPane1.setDividerLocation(jPanelMain.getWidth()-240);
+        jSplitPane1.setDividerLocation(jPanelMain.getWidth() - 240);
         super.paint(g); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
 }
