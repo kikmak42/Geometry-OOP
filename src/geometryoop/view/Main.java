@@ -66,15 +66,16 @@ public class Main extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel() {
             public void paint(java.awt.Graphics g) {
                 super.paint(g);
-                if (controller!= null) {
-                    if(controller.getShapeType() != null) {
-                        controller.getShapeType().getGeometryShape().draw((java.awt.Graphics2D) g, controller.getValue());
-                    }
-                }
+                controller.drawShape((java.awt.Graphics2D) g);
             }
         };
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                formComponentResized(evt);
+            }
+        });
 
         jSplitPane1.setDividerLocation(500);
         jSplitPane1.setRightComponent(inputPanel1);
@@ -139,15 +140,17 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
-        controller.setOffset(evt.getX(),evt.getY());
-        //System.out.println("Mouse Dragged : "+evt.getX()+" "+evt.getY());
-       // controller.getShapeType().getGeometryShape().setOffset(evt.getX(),evt.getY());
+        controller.setOffset(evt.getX(), evt.getY());
     }//GEN-LAST:event_jPanel1MouseDragged
 
     private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
         controller.setClicked(evt.getX(), evt.getY());
-        System.out.println("Mouse Pressed at :"+evt.getX()+" "+evt.getY());
     }//GEN-LAST:event_jPanel1MousePressed
+
+    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
+        jSplitPane1.setDividerLocation(jPanelMain.getWidth() - 240);
+
+    }//GEN-LAST:event_formComponentResized
     /**
      * @param args the command line arguments
      */
@@ -176,7 +179,6 @@ public class Main extends javax.swing.JFrame {
 
     @Override
     public void paint(Graphics g) {
-        jSplitPane1.setDividerLocation(jPanelMain.getWidth() - 240);
         super.paint(g); //To change body of generated methods, choose Tools | Templates.
     }
 }

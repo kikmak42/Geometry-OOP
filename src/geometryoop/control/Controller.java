@@ -6,6 +6,7 @@ package geometryoop.control;
 
 import geometryoop.model.ShapeType;
 import geometryoop.view.Main;
+import java.awt.Graphics2D;
 
 /**
  *
@@ -23,29 +24,27 @@ public class Controller {
         this.main = main;
     }
 
-    public void drawShape(ShapeType shapeType, double value) {
+    public void setShape(ShapeType shapeType, double value) {
         this.shapeType = shapeType;
         this.value = value;
         main.getCanvas().repaint();
     }
 
-    public ShapeType getShapeType() {
-        return shapeType;
-    }
-
-    public double getValue() {
-        return value;
+    public void drawShape(Graphics2D g) {
+        if (shapeType != null) {
+            shapeType.getGeometryShape().draw(g, value);
+        }
     }
 
     public void setOffset(int x, int y) {
-        shapeType.getGeometryShape().setOffset(x-xClicked, y-yClicked);
+        shapeType.getGeometryShape().setOffset(x - xClicked, y - yClicked);
         this.xClicked = x;
         this.yClicked = y;
         main.getCanvas().repaint();
     }
-    
+
     public void setClicked(int x, int y) {
-        this.xClicked=x;
-        this.yClicked=y;
+        this.xClicked = x;
+        this.yClicked = y;
     }
 }

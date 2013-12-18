@@ -8,6 +8,9 @@
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
+  <Events>
+    <EventHandler event="componentResized" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="formComponentResized"/>
+  </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -82,7 +85,7 @@
                 <EventHandler event="mouseDragged" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="jPanel1MouseDragged"/>
               </Events>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel() {&#xd;&#xa;    public void paint(java.awt.Graphics g) {&#xd;&#xa;super.paint(g);&#xd;&#xa;    if (controller!= null) {&#xd;&#xa;if(controller.getShapeType() != null) {&#xd;&#xa;        controller.getShapeType().getGeometryShape().draw((java.awt.Graphics2D) g, controller.getValue());&#xd;&#xa;}&#xd;&#xa;}&#xd;&#xa;    }&#xd;&#xa;};"/>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel() {&#xd;&#xa;    public void paint(java.awt.Graphics g) {&#xd;&#xa;&#x9;&#x9;super.paint(g);&#xd;&#xa;&#x9;&#x9;controller.drawShape((java.awt.Graphics2D) g);&#xd;&#xa;    }&#xd;&#xa;};"/>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Main_jPanel1"/>
               </AuxValues>
               <Constraints>

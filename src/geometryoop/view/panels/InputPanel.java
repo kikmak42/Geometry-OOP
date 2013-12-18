@@ -99,8 +99,8 @@ public class InputPanel extends javax.swing.JPanel {
             //   cD.setVisible(true);
             //   cD.setVisible(true);
 
-            controller.drawShape(buttonPanel.getSelectedShapeType(), Double.parseDouble(jTextField1.getText()));
-            //controller.drawShape(null, but);
+            controller.setShape(buttonPanel.getSelectedShapeType(), Double.parseDouble(jTextField1.getText()));
+            //controller.setShape(null, but);
             /*
              final DrawableCircle dc = new DrawableCircle();
              JPanel drawingPanel = new JPanel() {
