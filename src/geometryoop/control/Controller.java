@@ -17,8 +17,6 @@ public class Controller {
     private ShapeType shapeType;
     private double value;
     private Main main;
-    private int xClicked;
-    private int yClicked;
 
     public Controller(Main main) {
         this.main = main;
@@ -37,14 +35,12 @@ public class Controller {
     }
 
     public void setOffset(int x, int y) {
-        shapeType.getGeometryShape().setOffset(x - xClicked, y - yClicked);
-        this.xClicked = x;
-        this.yClicked = y;
+        shapeType.getGeometryShape().setOffset(x, y);
+        shapeType.getGeometryShape().setClicked(x, y);
         main.getCanvas().repaint();
     }
 
     public void setClicked(int x, int y) {
-        this.xClicked = x;
-        this.yClicked = y;
+        shapeType.getGeometryShape().setClicked(x, y);
     }
 }

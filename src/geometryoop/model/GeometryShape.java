@@ -14,6 +14,8 @@ public abstract class GeometryShape {
 
     protected int xOffset;
     protected int yOffset;
+    protected int xClicked;
+    protected int yClicked;
 
     protected GeometryShape() {
         xOffset = 0;
@@ -23,7 +25,12 @@ public abstract class GeometryShape {
     public abstract void draw(Graphics2D gd, double value);
 
     public void setOffset(int xOffset, int yOffset) {
-        this.xOffset = xOffset + this.xOffset;
-        this.yOffset = yOffset + this.yOffset;
+        this.xOffset = xOffset + this.xOffset - xClicked;
+        this.yOffset = yOffset + this.yOffset - yClicked;
+    }
+
+    public void setClicked(int x, int y) {
+        this.xClicked = x;
+        this.yClicked = y;
     }
 }
