@@ -7,6 +7,7 @@ package geometryoop.control;
 import geometryoop.model.ShapeType;
 import geometryoop.view.Main;
 import java.awt.Graphics2D;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -42,5 +43,9 @@ public class Controller {
 
     public void setClicked(int x, int y) {
         shapeType.getGeometryShape().setClicked(x, y);
+    }
+
+    public void showMessage(String msg) {
+        JOptionPane.showMessageDialog(main, msg);
     }
 }

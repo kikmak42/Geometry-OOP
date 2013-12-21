@@ -7,6 +7,7 @@ package geometryoop.view.panels;
 import geometryoop.control.Controller;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
 /**
@@ -117,7 +118,11 @@ public class InputPanel extends javax.swing.JPanel {
              */
             //s.draw(null, WIDTH, WIDTH);
         } catch (ButtonPanel.NoButtonSelectedException ex) {
+            controller.showMessage("Select a Shape");
+        } catch (NumberFormatException ex) {
+            controller.showMessage("Enter a valid parameter");
         }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void setController(Controller controller) {
